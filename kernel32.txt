@@ -1,0 +1,432 @@
+AcquireSRWLockExclusive
+AcquireSRWLockShared
+InitializeSRWLock
+ReleaseSRWLockExclusive
+ReleaseSRWLockShared
+TryAcquireSRWLockExclusive
+TryAcquireSRWLockShared
+DeleteProcThreadAttributeList
+ApplicationRecoveryFinished
+AddDllDirectory
+CancelThreadpoolIo
+SubmitThreadpoolWork
+CloseThreadpool
+CloseThreadpoolCleanupGroup
+CloseThreadpoolIo
+CloseThreadpoolTimer
+CloseThreadpoolWait
+CloseThreadpoolWork
+DisassociateCurrentThreadFromCallback
+StartThreadpoolIo
+retn    4
+SetThreadStackGuarantee
+mov     eax, 1           
+retn    4
+QueryThreadCycleTime
+signed int __stdcall QueryThreadCycleTime(int a1, _QWORD *a2)
+{
+  signed int result; // eax@2
+
+  if ( a2 )
+  {
+    *a2 = 3000i64 * GetTickCount();
+    result = 1;
+  }
+  else
+  {
+    result = 0;
+  }
+  return result;
+}
+InitializeCriticalSectionEx
+BOOL __stdcall InitializeCriticalSectionEx(LPCRITICAL_SECTION lpCriticalSection, DWORD dwSpinCount, int a3)
+{
+  return InitializeCriticalSectionAndSpinCount(lpCriticalSection, dwSpinCount);
+}
+FlsAlloc 
+{
+  return TlsAlloc();
+}
+FlsFree
+BOOL __stdcall FlsFree(DWORD dwTlsIndex)
+{
+  return TlsFree(dwTlsIndex);
+}
+FlsGetValue
+LPVOID __stdcall FlsGetValue(DWORD dwTlsIndex)
+{
+  return TlsGetValue(dwTlsIndex);
+}
+FlsSetValue
+BOOL __stdcall FlsSetValue(DWORD dwTlsIndex, LPVOID lpTlsValue)
+{
+  return TlsSetValue(dwTlsIndex, lpTlsValue);
+}
+GetErrorMode
+xor     eax, eax
+retn
+CallbackMayRunLong
+CreateThreadpool
+IsThreadpoolTimerSet
+IsValidLocaleName
+Wow64DisableWow64FsRedirection
+Wow64RevertWow64FsRedirection
+ApplicationRecoveryInProgress
+CancelSynchronousIo
+xor     eax, eax        
+retn    4
+CreateThreadpoolIo
+SleepConditionVariableSRW
+GetFinalPathNameByHandleW
+xor     eax, eax       
+retn    10h
+ReleaseSemaphoreWhenCallbackReturns
+CloseThreadpoolCleanupGroupMembers
+SetThreadpoolWait
+retn    0Ch
+CreateThreadpoolCleanupGroup
+TrySubmitThreadpoolCallback
+GetThreadUILanguage
+IsWow64Message
+xor     eax, eax       
+retn
+CreateThreadpoolTimer
+CreateThreadpoolWait
+CreateThreadpoolWork
+SetProcessPreferredUILanguages
+SetThreadPreferredUILanguages
+xor     eax, eax
+retn    0Ch
+FreeLibraryWhenCallbackReturns
+LeaveCriticalSectionWhenCallbackReturns
+ReleaseMutexWhenCallbackReturns
+SetEventWhenCallbackReturns
+SetThreadpoolThreadMaximum
+WaitForThreadpoolIoCallbacks
+WaitForThreadpoolTimerCallbacks
+WaitForThreadpoolWaitCallbacks
+WaitForThreadpoolWorkCallbacks
+retn    8
+SetThreadpoolTimer
+retn    10h
+QueryThreadpoolStackInformation
+SetThreadpoolStackInformation
+SetThreadpoolThreadMinimum
+CheckForReadOnlyResource
+RegisterApplicationRestart 
+xor     eax, eax
+retn    8
+LCMapStringEx
+mov     edi, edi
+push    ebp
+mov     ebp, esp
+pop     ebp
+xor     eax, eax
+retn    24h
+CancelIoEx
+GetThreadGroupAffinity
+mov     edi, edi        
+push    ebp
+mov     ebp, esp
+pop     ebp
+xor     eax, eax
+retn    8
+CompareStringOrdinal
+mov     edi, edi
+push    ebp
+mov     ebp, esp
+pop     ebp
+xor     eax, eax
+retn    14h
+GetLogicalProcessorInformationEx
+xor     eax, eax
+retn    0Ch
+CreateEventExA
+CreateEventExW
+CreateMutexExA
+CreateMutexExW
+mov     edi, edi        
+push    ebp
+mov     ebp, esp
+pop     ebp
+xor     eax, eax
+retn    10h
+CompareStringEx
+mov     edi, edi
+push    ebp
+mov     ebp, esp
+pop     ebp
+xor     eax, eax
+retn    24h
+UpdateProcThreadAttribute
+mov     edi, edi
+push    ebp
+mov     ebp, esp
+pop     ebp
+xor     eax, eax
+retn    1Ch
+CreateRemoteThreadEx
+mov     edi, edi
+push    ebp
+mov     ebp, esp
+pop     ebp
+xor     eax, eax
+retn    20h
+InitializeProcThreadAttributeList
+SetFileInformationByHandle
+GetFileMUIInfo
+RegisterApplicationRecoveryCallback
+xor     eax, eax
+retn    10h
+GetVolumeInformationByHandleW
+xor     eax, eax
+retn    20h
+GetThreadPreferredUILanguages
+GetProcessPreferredUILanguages
+GetUserPreferredUILanguages
+GetSystemPreferredUILanguages
+push    ebp            
+mov     ebp, esp
+pop     ebp
+xor     eax, eax
+retn    10h
+FindNLSString
+GetFileMUIPath
+xor     eax, eax      
+retn    1Ch
+FindNLSStringEx
+xor     eax, eax
+retn    28h
+GetLocaleInfoEx
+mov     edi, edi
+push    ebp
+mov     ebp, esp
+pop     ebp
+xor     eax, eax
+retn    10h
+CreateSemaphoreExA
+HANDLE __stdcall CreateSemaphoreExA(LPSECURITY_ATTRIBUTES lpSemaphoreAttributes, LONG lInitialCount, LONG lMaximumCount, LPCSTR lpName, int a5, int a6)
+{
+  return CreateSemaphoreA(lpSemaphoreAttributes, lInitialCount, lMaximumCount, lpName);
+}
+CreateSemaphoreExW
+HANDLE __stdcall CreateSemaphoreExW(LPSECURITY_ATTRIBUTES lpSemaphoreAttributes, LONG lInitialCount, LONG lMaximumCount, LPCWSTR lpName, int a5, int a6)
+{
+  return CreateSemaphoreW(lpSemaphoreAttributes, lInitialCount, lMaximumCount, lpName);
+}
+GetCurrentProcessorNumber
+xor     eax, eax
+inc     eax
+cpuid
+shr     ebx, 24h
+mov     eax, ebx
+retn
+GetProductInfo
+mov     eax, 1
+retn    14h
+GetProcessIdOfThread
+GetThreadId
+mov     edi, edi       
+push    ebp
+mov     ebp, esp
+pop     ebp
+xor     eax, eax
+retn    4
+BaseSetLastNTError
+DWORD __stdcall BaseSetLastNTError(NTSTATUS NtStatus)
+{
+  DWORD v1; // esi@1
+
+  v1 = RtlNtStatusToDosError(NtStatus);
+  "NTDLL.RtlSetLastWin32Error"(v1);
+  return v1;
+}
+QueryFullProcessImageNameA
+int __stdcall QueryFullProcessImageNameA(int a1, int a2, LPSTR lpString1, int a4)
+{
+  const CHAR *v4; // eax@1
+  unsigned int v5; // eax@4
+  bool v6; // cf@5
+  bool v7; // zf@5
+  signed int v9; // [sp-4h] [bp-298h]@6
+  CHAR String2[4]; // [sp+0h] [bp-294h]@1
+  FARPROC v11; // [sp+280h] [bp-14h]@3
+  FARPROC v12; // [sp+284h] [bp-10h]@1
+  HMODULE hModule; // [sp+288h] [bp-Ch]@1
+  char v14; // [sp+28Ch] [bp-8h]@3
+  int v15; // [sp+290h] [bp-4h]@3
+
+  *(_DWORD *)String2 = 0;
+  hModule = LoadLibraryA((LPCSTR)0x7C57220C);
+  v12 = GetProcAddress(hModule, (LPCSTR)0x7C5C6CC0);
+  v4 = (const CHAR *)2086431956;
+  if ( !a2 )
+    v4 = (const CHAR *)2086431976;
+  v11 = GetProcAddress(hModule, v4);
+  if ( ((int (__stdcall *)(int, int *, signed int, char *))v12)(a1, &v15, 4, &v14)
+    && (v5 = ((int (__stdcall *)(int, int, CHAR *, signed int))v11)(a1, v15, String2, 640)) != 0
+    && (v6 = *(_DWORD *)a4 < v5, v7 = *(_DWORD *)a4 == v5, *(_DWORD *)a4 = v5, v6 || v7) )
+  {
+    lstrcpyA(lpString1, String2);
+    v9 = 1;
+  }
+  else
+  {
+    v9 = 0;
+  }
+  FreeLibrary(hModule);
+  return v9;
+}
+QueryFullProcessImageNameW
+int __stdcall QueryFullProcessImageNameW(int a1, int a2, LPWSTR lpString1, int a4)
+{
+  const CHAR *v4; // eax@1
+  unsigned int v5; // eax@4
+  bool v6; // cf@5
+  bool v7; // zf@5
+  signed int v9; // [sp-4h] [bp-518h]@6
+  WCHAR String2[2]; // [sp+0h] [bp-514h]@1
+  FARPROC v11; // [sp+500h] [bp-14h]@3
+  FARPROC v12; // [sp+504h] [bp-10h]@1
+  HMODULE hModule; // [sp+508h] [bp-Ch]@1
+  char v14; // [sp+50Ch] [bp-8h]@3
+  int v15; // [sp+510h] [bp-4h]@3
+
+  *(_DWORD *)String2 = 0;
+  hModule = LoadLibraryA((LPCSTR)0x7C57220C);
+  v12 = GetProcAddress(hModule, (LPCSTR)0x7C5C6CC0);
+  v4 = (const CHAR *)2086432000;
+  if ( !a2 )
+    v4 = (const CHAR *)2086432020;
+  v11 = GetProcAddress(hModule, v4);
+  if ( ((int (__stdcall *)(int, int *, signed int, char *))v12)(a1, &v15, 4, &v14)
+    && (v5 = ((int (__stdcall *)(int, int, WCHAR *, signed int))v11)(a1, v15, String2, 1280)) != 0
+    && (v6 = *(_DWORD *)a4 < v5, v7 = *(_DWORD *)a4 == v5, *(_DWORD *)a4 = v5, v6 || v7) )
+  {
+    lstrcpyW(lpString1, String2);
+    v9 = 1;
+  }
+  else
+  {
+    v9 = 0;
+  }
+  FreeLibrary(hModule);
+  return v9;
+}
+PowerClearRequest
+int __stdcall PowerClearRequest(int a1, int a2)
+{
+  "NTDLL.RtlSetLastWin32Error"(0x78u);
+  return 0;
+}
+PowerCreateRequest
+signed int __stdcall PowerCreateRequest(int a1)
+{
+  "NTDLL.RtlSetLastWin32Error"(0x78u);
+  return -1;
+}
+PowerSetRequest
+int __stdcall PowerSetRequest(int a1, int a2)
+{
+  "NTDLL.RtlSetLastWin32Error"(0x78u);
+  return 0;
+}
+SetFileCompletionNotificationModes
+mov     eax, 1
+retn    8
+// Implimentation by BlackWingCat
+typedef PVOID RTL_CONDITION_VARIABLE;
+typedef RTL_CONDITION_VARIABLE CONDITION_VARIABLE, *PCONDITION_VARIABLE;
+//typedef CONDITION_VARIABLE pthread_cond_t;
+typedef CRITICAL_SECTION pthread_mutex_t;
+typedef struct win32_cond_t {
+	pthread_mutex_t mtx_broadcast;
+	pthread_mutex_t mtx_waiter_count;
+	volatile int waiter_count;
+	HANDLE semaphore;
+	HANDLE waiters_done;
+	volatile int is_broadcast;
+} win32_cond_t;
+//typedef CONDITION_VARIABLE pthread_cond_t;
+typedef struct pthread_cond_t {
+	void *Ptr;
+} pthread_cond_t;
+
+_declspec(dllexport) void WINAPI InitializeConditionVariable(pthread_cond_t *cond) {
+     win32_cond_t *win32_cond = NULL;
+	win32_cond = (win32_cond_t *)LocalAlloc(0x40,sizeof(win32_cond_t));
+	if (!win32_cond)
+		return;
+	cond->Ptr = win32_cond;
+	win32_cond->semaphore = CreateSemaphore(NULL, 0, 0x7fffffff, NULL);
+	if (!win32_cond->semaphore)
+		return;
+	win32_cond->waiters_done = CreateEvent(NULL, TRUE, FALSE, NULL);
+	if (!win32_cond->waiters_done)
+		return;
+	InitializeCriticalSection(&win32_cond->mtx_waiter_count);
+	InitializeCriticalSection(&win32_cond->mtx_broadcast);
+	return;
+}
+
+ 
+_declspec(dllexport) void WINAPI WakeAllConditionVariable(pthread_cond_t *cond)
+{
+	win32_cond_t *win32_cond = (win32_cond_t *)cond->Ptr;
+	int have_waiter;
+	EnterCriticalSection(&win32_cond->mtx_broadcast);
+	EnterCriticalSection(&win32_cond->mtx_waiter_count);
+	have_waiter = 0;
+	if (win32_cond->waiter_count) {
+		win32_cond->is_broadcast = 1;
+		have_waiter = 1;
+	}
+	if (have_waiter) {
+		ReleaseSemaphore(win32_cond->semaphore, win32_cond->waiter_count, NULL);
+		LeaveCriticalSection(&win32_cond->mtx_waiter_count);
+		WaitForSingleObject(win32_cond->waiters_done, INFINITE);
+		ResetEvent(win32_cond->waiters_done);
+		win32_cond->is_broadcast = 0;
+	} else
+		LeaveCriticalSection(&win32_cond->mtx_waiter_count);
+	LeaveCriticalSection(&win32_cond->mtx_broadcast);
+}
+_declspec(dllexport) void WINAPI WakeConditionVariable(pthread_cond_t *cond)
+{
+	win32_cond_t *win32_cond = (win32_cond_t *)cond->Ptr;
+	int have_waiter;
+	EnterCriticalSection(&win32_cond->mtx_broadcast);
+	EnterCriticalSection(&win32_cond->mtx_waiter_count);
+	have_waiter = win32_cond->waiter_count;
+	LeaveCriticalSection(&win32_cond->mtx_waiter_count);
+	if (have_waiter) {
+		ReleaseSemaphore(win32_cond->semaphore, 1, NULL);
+		WaitForSingleObject(win32_cond->waiters_done, INFINITE);
+		ResetEvent(win32_cond->waiters_done);
+	}
+	LeaveCriticalSection(&win32_cond->mtx_broadcast);
+}
+
+_declspec(dllexport) int WINAPI SleepConditionVariableCS (pthread_cond_t *cond, pthread_mutex_t *mutex, int slp) {
+	win32_cond_t *win32_cond = (win32_cond_t *)cond->Ptr;
+	int last_waiter;
+	EnterCriticalSection(&win32_cond->mtx_broadcast);
+	EnterCriticalSection(&win32_cond->mtx_waiter_count);
+	win32_cond->waiter_count++;
+	LeaveCriticalSection(&win32_cond->mtx_waiter_count);
+	LeaveCriticalSection(&win32_cond->mtx_broadcast);
+
+	LeaveCriticalSection(mutex);
+	int i = WaitForSingleObject(win32_cond->semaphore, slp);
+	if(i){
+		SetLastError(i);
+	}
+	EnterCriticalSection(&win32_cond->mtx_waiter_count);
+	win32_cond->waiter_count--;
+	last_waiter = !win32_cond->waiter_count || !win32_cond->is_broadcast;
+	LeaveCriticalSection(&win32_cond->mtx_waiter_count);
+	if (last_waiter)
+		SetEvent(win32_cond->waiters_done);
+	EnterCriticalSection(mutex);
+	return  (bool)(i==0);
+}
